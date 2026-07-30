@@ -22,3 +22,21 @@ export async function getSigner() {
     }
     return await provider.getSigner();
 }
+
+export async function connectWallet() {
+    const provider = await getProvider();
+    if (typeof window === "undefined") {
+        throw new Error("Wallet is not available.")
+    }
+    if (!window.ethereum) {
+        throw new Error("Metamask is not installed.")
+    }
+    await window.ethereum.request({
+        method:"wallet_switchEthereumChain",
+        params:[{ chainId:SEPOLIA_CHAIN_ID}]
+    });
+    const signer = await provider.getSigner();
+    return {
+        provider, signer, address: await signer.getAddress(),
+    }
+}
