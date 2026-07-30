@@ -13,3 +13,12 @@ export async function getProvider() {
     }
     return new ethers.BrowserProvider(window.ethereum);
 }
+
+export async function getSigner() {
+    const provider = await getProvider();
+    const accounts = await provider.send("eth_requestAccounts", []);
+    if (accounts.length === 0) {
+        throw new Error("Wallet not connected");
+    }
+    return await provider.getSigner();
+}
