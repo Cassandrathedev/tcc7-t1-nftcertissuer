@@ -1,20 +1,297 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* -----------------------------
+   Global Variables
+------------------------------*/
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7fb;
+  --foreground: #1f2937;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+
+  --border: #d1d5db;
+
+  --card: #ffffff;
+
+  --danger: #dc2626;
+
+  --radius: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* -----------------------------
+   Reset
+------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* -----------------------------
+   Body
+------------------------------*/
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   Links
+------------------------------*/
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+/* -----------------------------
+   Buttons
+------------------------------*/
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  transition: 0.25s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+/* -----------------------------
+   Inputs
+------------------------------*/
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  font-size: 15px;
+  outline: none;
+  transition: .2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .2);
+}
+
+/* -----------------------------
+   Cards
+------------------------------*/
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow:
+    0 5px 12px rgba(0,0,0,.06);
+}
+
+/* -----------------------------
+   Dashboard Stats
+------------------------------*/
+
+.stats-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: .25s;
+}
+
+.stats-card:hover {
+  transform: translateY(-3px);
+}
+
+.stats-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* -----------------------------
+   Tables
+------------------------------*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+/* -----------------------------
+   Navbar
+------------------------------*/
+
+nav {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+nav a {
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* -----------------------------
+   Wallet Address
+------------------------------*/
+
+.wallet-address {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* -----------------------------
+   Buttons
+------------------------------*/
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 18px;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-success {
+  background: var(--secondary);
+  color: white;
+  padding: 12px 18px;
+}
+
+.btn-success:hover {
+  background: var(--secondary-hover);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  padding: 12px 18px;
+}
+
+/* -----------------------------
+   Forms
+------------------------------*/
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* -----------------------------
+   Container
+------------------------------*/
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 32px;
+}
+
+/* -----------------------------
+   Section Titles
+------------------------------*/
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* -----------------------------
+   Certificate Status
+------------------------------*/
+
+.valid {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.invalid {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* -----------------------------
+   Footer
+------------------------------*/
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+  margin-top: 60px;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------*/
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 20px;
+  }
+
+  nav {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
 }
