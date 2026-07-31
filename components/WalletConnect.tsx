@@ -34,4 +34,19 @@ window.ethereum.request({ method: "eth_accounts" }).then((accounts: string[])=> 
   });
 }, []);
 
+// Listen for account changes
+const handleAccountsChanged = (...args: unknown[]) => {
+  const accounts = args[0] as string[];
+  if (accounts.length === 0) {
+    setAddress("");
+  } else {
+    setAddress(accounts[0]);
+  }
+};
+window.ethereum.on?.("accountsChanged", handleAccountsChanged);
+return () => {
+  window.ethereum?.removeListener?.(
+    "accountsChange", handleAccountsChanged
+  );
+};
 }
