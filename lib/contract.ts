@@ -25,3 +25,23 @@ export async function getWritableContract() {
     signer
   );
 }
+
+export async function issueCertificate(
+  recipient: string,
+  recipientName: string,
+  courseOrEvent: string,
+  metadataURI: string
+) {
+  const contract = await getWritableContract();
+
+  const tx = await contract.issueCertificate(
+    recipient,
+    recipientName,
+    courseOrEvent,
+    metadataURI
+  );
+
+  await tx.wait();
+
+  return tx;
+}
