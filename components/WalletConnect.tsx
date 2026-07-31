@@ -20,4 +20,18 @@ export default function WalletConnect() {
       setLoading(false);
     }
   };
+// Disconnect Wallet
+const handleDisconnect = () => {
+  setAddress("");
+}
+useEffect(() => {
+  if (typeof window === "undefined" || !window.ethereum) return;
+// check if wallet is already connected
+window.ethereum.request({ method: "eth_accounts" }).then((accounts: string[])=> {
+  if (accounts.length > 0) {
+    setAddress(accounts[0]);
+  }
+  });
+}, []);
+
 }
