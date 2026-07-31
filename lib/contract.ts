@@ -89,3 +89,9 @@ export async function isIssuer(address: string) {
 
   return await contract.isIssuer(address);
 }
+
+export async function getOwner() {
+  const contract = await getContract();
+
+  return await contract.owner();
+}
