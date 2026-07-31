@@ -63,3 +63,13 @@ export async function getTokenURI(tokenId: number) {
 
   return await contract.tokenURI(tokenId);
 }
+
+export async function revokeCertificate(tokenId: number) {
+  const contract = await getWritableContract();
+
+  const tx = await contract.revokeCertificate(tokenId);
+
+  await tx.wait();
+
+  return tx;
+}
