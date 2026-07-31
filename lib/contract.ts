@@ -73,3 +73,13 @@ export async function revokeCertificate(tokenId: number) {
 
   return tx;
 }
+
+export async function removeIssuer(address: string) {
+  const contract = await getWritableContract();
+
+  const tx = await contract.removeIssuer(address);
+
+  await tx.wait();
+
+  return tx;
+}
