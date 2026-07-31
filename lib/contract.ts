@@ -15,3 +15,13 @@ export async function getContract() {
     provider
   );
 }
+
+export async function getWritableContract() {
+  const signer = await getSigner();
+
+  return new Contract(
+    CONTRACT_ADDRESS,
+    contractABI,
+    signer
+  );
+}
