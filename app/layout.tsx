@@ -28,7 +28,7 @@ export default function RootLayout({
 
                     {/* Footer */}
                     <footer className="border-t bg-white py-6 text-center text-sm text-gray-600">
-                        © {new Date().getFullYear()} NFT Certificate Issuer • Powered by
+                        © {new Date().getFullYear()} The Registrar • Powered by
                         Solidity, Foundry, Next.js & Sepolia
                     </footer>
                 </div>
