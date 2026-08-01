@@ -45,3 +45,15 @@ export async function issueCertificate(
 
   return tx;
 }
+
+export async function getCertificate(tokenId: number) {
+  const contract = await getContract();
+
+  const certificate = await contract.getCertificate(tokenId);
+
+  return {
+    recipientName: certificate[0],
+    courseOrEvent: certificate[1],
+    issuedAt: Number(certificate[2]),
+  };
+}
