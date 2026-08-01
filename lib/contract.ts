@@ -83,3 +83,9 @@ export async function removeIssuer(address: string) {
 
   return tx;
 }
+
+export async function isIssuer(address: string) {
+  const contract = await getContract();
+
+  return await contract.isIssuer(address);
+}
