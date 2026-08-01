@@ -57,3 +57,9 @@ export async function getCertificate(tokenId: number) {
     issuedAt: Number(certificate[2]),
   };
 }
+
+export async function getTokenURI(tokenId: number) {
+  const contract = await getContract();
+
+  return await contract.tokenURI(tokenId);
+}
