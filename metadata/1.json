@@ -1,0 +1,11 @@
+{
+    "name": "TCC7 Certificate",
+    "description": "Blockchain Bootcamp Completion Certificate",
+    "image": "ipfs//bafkreihj63ppxt3bcmoe5ce6ja333zhglpgcrc2mvk3rd54tmz65ayurza",
+    "attributes": [
+        {
+            "trait_type": "Course",
+            "value": "Blockchain Bootcamp"
+        }
+    ]
+}
