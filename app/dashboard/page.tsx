@@ -73,15 +73,14 @@ export default function DashboardPage() {
           </h2>
 
           <p
-            className={`mt-3 font-semibold ${
-              issuer ? "text-green-600" : "text-red-600"
-            }`}
+            className={`mt-3 font-semibold ${issuer ? "text-green-600" : "text-red-600"
+              }`}
           >
             {loading
               ? "Checking..."
               : issuer
-              ? "Approved Issuer"
-              : "Not an Issuer"}
+                ? "Approved Issuer"
+                : "Not an Issuer"}
           </p>
 
         </div>
