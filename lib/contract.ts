@@ -2,9 +2,10 @@
 
 import { Contract } from "ethers";
 import { getProvider, getSigner } from "./web3";
-import contractABI from "./abi.json";
+import NFTCertissuer from "@/contracts/out/NFTCertissuer.sol/NFTCertissuer.json";
 
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
+const contractABI = NFTCertissuer.abi;
 
 export async function getContract() {
   const provider = await getProvider();

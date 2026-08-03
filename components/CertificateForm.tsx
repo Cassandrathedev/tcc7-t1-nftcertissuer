@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { Contract } from "ethers";
 import { getSigner } from "@/lib/web3";
-//import abi from "";
+import NFTCertissuer from "@/contracts/out/NFTCertissuer.sol/NFTCertissuer.json";
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
+const abi = NFTCertissuer.abi;
 
 export default function CertificateForm() {
 

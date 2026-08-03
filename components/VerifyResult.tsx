@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { Contract, BrowserProvider } from "ethers";
-import abi from "@/lib/abi.json";
+import NFTCertissuer from "@/contracts/out/NFTCertissuer.sol/NFTCertissuer.json";
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
+const abi = NFTCertissuer.abi;
 
 export default function VerifyResult(){
 
