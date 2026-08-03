@@ -27,9 +27,10 @@ export default function WalletConnect() {
   useEffect(() => {
     if (typeof window === "undefined" || !window.ethereum) return;
     // check if wallet is already connected
-    window.ethereum.request({ method: "eth_accounts" }).then((accounts: string[]) => {
-      if (accounts.length > 0) {
-        setAddress(accounts[0]);
+    window.ethereum.request({ method: "eth_accounts" }).then((accounts) => {
+      const walletAccounts = accounts as string[];
+      if (walletAccounts.length > 0) {
+        setAddress(walletAccounts[0]);
       }
     });
 
