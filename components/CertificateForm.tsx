@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Contract } from "ethers";
 import { getSigner } from "@/lib/web3";
-import abi from "@/lib/abi.json";
+//import abi from "";
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;

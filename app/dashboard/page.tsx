@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { getWalletAddress } from "@/lib/web3";
+import { getAddress } from "@/lib/web3";
 import { getContract } from "@/lib/contract";
 
 export default function DashboardPage() {
@@ -13,7 +13,7 @@ export default function DashboardPage() {
   useEffect(() => {
     async function loadDashboard() {
       try {
-        const address = await getWalletAddress();
+        const address = await getAddress();
 
         if (address) {
           setWallet(address);

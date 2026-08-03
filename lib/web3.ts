@@ -40,3 +40,15 @@ export async function connectWallet() {
         provider, signer, address: await signer.getAddress(),
     }
 }
+export async function getAddress(): Promise<string |null> {
+    if (!window.ethereum) return null;
+
+    const provider = await getProvider();
+    const signer = await provider.getSigner();
+
+    try {
+        return await signer.getAddress();
+    } catch {
+        return null;
+    }
+}
