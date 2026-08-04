@@ -1,5 +1,5 @@
 {
-  "name": "web3-capstone-template",
+  "name": "tcc7-t1-nftcertissuer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,23 +11,24 @@
   "dependencies": {
     "@prisma/client": "^6.19.2",
     "dotenv": "^17.3.1",
-    "ethers": "^6.16.0",
-    "next": "^16.2.10",
+    "ethers": "^6.17.0",
+    "next": "^16.3.0",
     "prisma": "^6.19.2",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@metamask/providers": "^17.1.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.27",
+    "@metamask/providers": "^22.1.1",
+    "@types/next": "^8.0.7",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "autoprefixer": "^10.5.4",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.4",
+    "postcss": "^8.5.25",
+    "tailwindcss": "^3.4.19",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
