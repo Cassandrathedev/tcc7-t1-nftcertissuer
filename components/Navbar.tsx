@@ -27,7 +27,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="@/components/CertificateForm"
+            href="/issue"
             className="text-gray-700 transition hover:text-blue-600"
           >
             Issue

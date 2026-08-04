@@ -1,23 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { connectWallet } from "@/lib/web3";
+import { connectWallet, getAddress } from "@/lib/web3";
 
 export default function WalletConnect() {
   const [address, setAddress] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [isConnecting, setIsConnecting] = useState(false);
 
   // Connect Wallet
   const handleConnect = async () => {
     try {
-      setLoading(true);
+      setIsConnecting(true);
       const { address } = await connectWallet();
       setAddress(address);
     } catch (error) {
-      console.error(error);
-      alert("Failed to connect wallet.");
-    } finally {
-      setLoading(false);
+      console.error("Wallet connection error:", error);
+
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert("Failed to connect wallet.");
+      }
     }
   };
   // Disconnect Wallet
@@ -63,9 +66,9 @@ export default function WalletConnect() {
       </>
       ) : (
         <button onClick={handleConnect}
-          disabled={loading}
+          disabled={isConnecting}
           className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-gray-400">
-          {loading ? "Connecting..." : "Connect Wallet"}
+          {isConnecting ? "Connecting..." : "Connect Wallet"}
         </button>
       )}
     </div>
