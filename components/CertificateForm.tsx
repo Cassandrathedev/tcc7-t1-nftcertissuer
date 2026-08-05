@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Contract } from "ethers";
-import { getSigner } from "@/lib/web3";
-import NFTCertissuer from "@/contracts/out/NFTCertissuer.sol/NFTCertissuer.json";
+import { getSigner } from "../lib/web3";
+import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
@@ -28,11 +28,13 @@ export default function CertificateForm() {
         signer
       );
 
+      const metadataURI = `ipfs://${metadata}`;
+
       const tx=await contract.issueCertificate(
         recipient,
         recipientName,
         course,
-        metadata
+        metadataURI
       );
 
       await tx.wait();
@@ -54,6 +56,7 @@ export default function CertificateForm() {
 <div className="space-y-4">
 
 <input
+type="text"
 className="w-full border rounded-lg p-3"
 placeholder="Recipient Wallet"
 value={recipient}
@@ -61,6 +64,7 @@ onChange={(e)=>setRecipient(e.target.value)}
 />
 
 <input
+type="text"
 className="w-full border rounded-lg p-3"
 placeholder="Recipient Name"
 value={recipientName}
@@ -68,6 +72,7 @@ onChange={(e)=>setRecipientName(e.target.value)}
 />
 
 <input
+type="text"
 className="w-full border rounded-lg p-3"
 placeholder="Course / Event"
 value={course}
@@ -75,6 +80,7 @@ onChange={(e)=>setCourse(e.target.value)}
 />
 
 <input
+type="text"
 className="w-full border rounded-lg p-3"
 placeholder="Metadata URI (IPFS)"
 value={metadata}

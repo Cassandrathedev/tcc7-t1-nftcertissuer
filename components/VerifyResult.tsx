@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Contract, BrowserProvider } from "ethers";
-import NFTCertissuer from "@/contracts/out/NFTCertissuer.sol/NFTCertissuer.json";
+import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;

@@ -60,8 +60,10 @@ export default function WalletConnect() {
           {address.slice(0, 6)}...
           {address.slice(-4)}
         </span>
-        <button onClick={handleDisconnect} className="rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700">
-          Disconnect
+        <button onClick={handleDisconnect}
+          disabled={isConnecting}
+          className="rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700">
+          {isConnecting ? "Disconnecting..." : "Disconnected"}
         </button>
       </>
       ) : (

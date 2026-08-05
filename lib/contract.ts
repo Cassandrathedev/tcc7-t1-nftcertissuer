@@ -1,8 +1,8 @@
 "use client";
 
 import { Contract } from "ethers";
-import { getProvider, getSigner } from "./web3";
-import NFTCertissuer from "@/contracts/out/NFTCertissuer.sol/NFTCertissuer.json";
+import { getProvider, getSigner } from "../lib/web3";
+import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 const contractABI = NFTCertissuer.abi;

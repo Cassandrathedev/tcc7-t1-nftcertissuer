@@ -1,21 +1,6 @@
-<<<<<<< HEAD
-import { ethers } from "ethers";
-
-export const connectWallet = async() => {
-    if(!window.ethereum) throw new Error("Metamask is not installed");
-
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    await provider.send("eth_requestAccounts", []);
-
-    const signer = await provider.getSigner();
-    const address = await signer.getAddress();
-    return { provider, signer, address};
-};
-=======
 "use client"
 
 import { ethers } from "ethers";
-import { chainStreams } from "next/dist/server/app-render/stream-ops.web";
 
 const SEPOLIA_CHAIN_ID = "0xaa36a";
 
@@ -91,4 +76,3 @@ export async function getAddress(): Promise<string | null> {
         return null;
     }
 }
->>>>>>> origin/development
