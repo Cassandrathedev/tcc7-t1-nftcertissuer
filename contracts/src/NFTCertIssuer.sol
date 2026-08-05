@@ -12,6 +12,7 @@ contract NFTCertIssuer is ERC721, Ownable {
         string recipientName;
         string courseOrEvent;
         uint256 issuedAt;
+        address issuer;
     }
 
     mapping(uint256 => Certificate) public certificates;
@@ -76,6 +77,8 @@ contract NFTCertIssuer is ERC721, Ownable {
             recipientName: recipientName,
             courseOrEvent: courseOrEvent,
             issuedAt: block.timestamp
+            issuer: msg.sender
+
         });
         _tokenURIs[tokenId] = metadataURI;
 
