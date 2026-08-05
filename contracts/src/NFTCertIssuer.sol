@@ -25,6 +25,7 @@ contract NFTCertIssuer is ERC721, Ownable {
     event CertificateIssued(
         uint256 indexed tokenId,
         address indexed recipient,
+        address indexed issuer,
         string recipientName,
         string courseOrEvent,
         string metadataURI
@@ -76,7 +77,7 @@ contract NFTCertIssuer is ERC721, Ownable {
         certificates[tokenId] = Certificate({
             recipientName: recipientName,
             courseOrEvent: courseOrEvent,
-            issuedAt: block.timestamp
+            issuedAt: block.timestamp,
             issuer: msg.sender
 
         });
@@ -84,16 +85,16 @@ contract NFTCertIssuer is ERC721, Ownable {
 
         _safeMint(recipient, tokenId);
 
-        emit CertificateIssued(tokenId, recipient, recipientName, courseOrEvent, metadataURI);
+        emit CertificateIssued(tokenId, recipient, msg.sender, recipientName, courseOrEvent, metadataURI);
     }
 
     /// @notice Read back a certificate's details
     function getCertificate(
         uint256 tokenId
-    ) external view returns (string memory recipientName, string memory courseOrEvent, uint256 issuedAt) {
+    ) external view returns (string memory recipientName, string memory courseOrEvent, uint256 issuedAt, address issuer) {
         if (_ownerOf(tokenId) == address(0)) revert CertificateDoesNotExist();
         Certificate memory cert = certificates[tokenId];
-        return (cert.recipientName, cert.courseOrEvent, cert.issuedAt);
+        return (cert.recipientName, cert.courseOrEvent, cert.issuedAt, cert.issuer);
     }
 
     /// @notice Returns the metadata URI for a given certificate, per the ERC-721 standard

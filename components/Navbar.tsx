@@ -40,6 +40,13 @@ export default function Navbar() {
             Verify
           </Link>
 
+          <Link
+            href="/manage-issuers"
+            className="text-gray-700 transition hover:text-blue-600"
+          >
+            Manage Issuers
+          </Link>
+
         </div>
 
         {/* Wallet Connection */}
