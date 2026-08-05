@@ -2,7 +2,7 @@
 
 import { ethers } from "ethers";
 
-const SEPOLIA_CHAIN_ID = "0xaa36a";
+const SEPOLIA_CHAIN_ID = "0xaa36a7";
 
 export async function getProvider() {
     if (typeof window === "undefined") {
