@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Contract } from "ethers";
 import { getSigner } from "@/lib/web3";
-import NFTCertissuer from "@/contracts/out/NFTCertIssuer.sol/NFTCertissuer.json";
+import NFTCertissuer from "@/contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
