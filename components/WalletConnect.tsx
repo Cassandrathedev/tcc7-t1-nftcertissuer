@@ -21,6 +21,8 @@ export default function WalletConnect() {
       } else {
         alert("Failed to connect wallet.");
       }
+    } finally {
+      setIsConnecting(false);
     }
   };
   // Disconnect Wallet
@@ -61,9 +63,8 @@ export default function WalletConnect() {
           {address.slice(-4)}
         </span>
         <button onClick={handleDisconnect}
-          disabled={isConnecting}
           className="rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700">
-          {isConnecting ? "Disconnecting..." : "Disconnected"}
+          Disconnect
         </button>
       </>
       ) : (

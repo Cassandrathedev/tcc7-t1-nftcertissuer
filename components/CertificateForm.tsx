@@ -5,8 +5,8 @@ import { Contract } from "ethers";
 import { getSigner } from "../lib/web3";
 import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
-const CONTRACT_ADDRESS =
-process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
+const CONTRACT_ADDRESS = "0x35be216bd69151D05bA265149D9f6cA16191ADEC";
+
 const abi = NFTCertissuer.abi;
 
 export default function CertificateForm() {
@@ -22,7 +22,8 @@ export default function CertificateForm() {
 
       const signer=await getSigner();
 
-      const contract=new Contract(
+      console.log(CONTRACT_ADDRESS);
+      const contract= new Contract(
         CONTRACT_ADDRESS,
         abi,
         signer
