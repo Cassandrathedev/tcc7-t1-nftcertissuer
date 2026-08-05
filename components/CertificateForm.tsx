@@ -28,7 +28,7 @@ export default function CertificateForm() {
         signer
       );
 
-      const tx=await contract.issueCertificate(
+      const tx= await contract.issueCertificate(
         recipient,
         recipientName,
         course,
