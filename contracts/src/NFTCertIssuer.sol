@@ -46,7 +46,9 @@ contract NFTCertIssuer is ERC721, Ownable {
     constructor(
         string memory name_,
         string memory symbol_
-    ) ERC721(name_, symbol_) Ownable(msg.sender) {}
+    ) ERC721(name_, symbol_) Ownable(msg.sender) {
+        isIssuer[msg.sender] = true; // Contract owner is also an issuer
+    }
 
     /// @notice Grant issuer permission to an address (owner only)
     function addIssuer(address issuer) external onlyOwner {

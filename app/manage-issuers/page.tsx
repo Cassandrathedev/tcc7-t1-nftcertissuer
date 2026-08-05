@@ -71,7 +71,7 @@ export default function ManageIssuersPage() {
       alert("Issuer removed successfully.");
 
       setIssuerAddress("");
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
       alert("Failed to remove issuer.");
     } finally {
