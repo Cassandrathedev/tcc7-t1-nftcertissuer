@@ -7,7 +7,7 @@ import NFTCertissuer from "@/contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json"
 
 const CONTRACT_ADDRESS =
 process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
-const abi = NFTCertissuer.abi;
+const abi = NFTCertIssuer.abi;
 
 export default function CertificateForm() {
 
