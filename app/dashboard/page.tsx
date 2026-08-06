@@ -20,6 +20,7 @@ export default function DashboardPage() {
 
           const contract = await getContract();
           const approved = await contract.isIssuer(address);
+          
 
           setIssuer(approved);
         }

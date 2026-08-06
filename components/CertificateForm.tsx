@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Contract } from "ethers";
+import { Contract, ethers } from "ethers";
 import { getSigner } from "../lib/web3";
 import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
-const CONTRACT_ADDRESS = "0x5707c788F4A16fd33F57C961602Cef5C7Dff33aB";
+const CONTRACT_ADDRESS = "0x3DE3b3f37ef694160AB857371311c3BD9673BA28";
 
 const abi = NFTCertissuer.abi;
 
@@ -32,9 +32,9 @@ export default function CertificateForm() {
       const metadataURI = `ipfs://${metadata}`;
 
       const tx = await contract.issueCertificate(
-        recipient,
-        recipientName,
-        course,
+        ethers.getAddress(recipient.trim()),
+        recipientName.trim(),
+        course.trim(),
         metadataURI
       );
 
