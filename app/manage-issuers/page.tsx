@@ -23,12 +23,16 @@ export default function ManageIssuersPage() {
       setLoading(true);
 
       const signer = await getSigner();
+      console.log("Connected Wallet:", await signer.getAddress());
 
       const contract = new Contract(
         CONTRACT_ADDRESS,
         abi,
         signer
       );
+
+      const owner = await contract.owner();
+      console.log("Contract Owner:", owner);
 
       const tx = await contract.addIssuer(issuerAddress);
 
@@ -37,11 +41,9 @@ export default function ManageIssuersPage() {
       alert("Issuer added successfully.");
 
       setIssuerAddress("");
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      alert("Failed to add issuer.");
-    } finally {
-      setLoading(false);
+      alert(error.shortMessage || error.message);
     }
   }
 
