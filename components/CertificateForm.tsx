@@ -31,7 +31,7 @@ export default function CertificateForm() {
 
       const metadataURI = `ipfs://${metadata}`;
 
-      const tx=await contract.issueCertificate(
+      const tx = await contract.issueCertificate(
         recipient,
         recipientName,
         course,
