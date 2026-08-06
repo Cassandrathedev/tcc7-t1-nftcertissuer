@@ -43,14 +43,13 @@ export async function connectWallet() {
       method: "wallet_addEthereumChain",
       params: [ 
         {
-            chainId: "0xaa36a",
+            chainId: "0xaa36a7",
             chainName: "Sepolia",
             nativeCurrency: {
                 name: "Sepolia ETH",
                 symbol: "ETH",
                 decimals: 18
             },
-            rpcUrls: ["https://ethereum-sepolia-rpc.publicnode.com"],
             blockExplorerUrls: ["https://sepolia.etherscan.io"]
         }
       ]
