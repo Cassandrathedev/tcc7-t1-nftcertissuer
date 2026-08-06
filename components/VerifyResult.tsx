@@ -59,7 +59,6 @@ Number(cert[2])*1000
 ).toLocaleDateString(),
 
 uri
-
 });
 
 }catch{
@@ -110,7 +109,7 @@ Certificate Verified ✅
 
 <p>
 
-<strong>Name:</strong>
+<strong>Name: </strong>
 
 {result.name}
 
@@ -118,7 +117,7 @@ Certificate Verified ✅
 
 <p>
 
-<strong>Course:</strong>
+<strong>Course: </strong>
 
 {result.course}
 
@@ -126,7 +125,7 @@ Certificate Verified ✅
 
 <p>
 
-<strong>Issued:</strong>
+<strong>Issued: </strong>
 
 {result.issuedAt}
 
@@ -134,7 +133,7 @@ Certificate Verified ✅
 
 <p className="break-all">
 
-<strong>Metadata:</strong>
+<strong>Metadata: </strong>
 
 {result.uri}
 
