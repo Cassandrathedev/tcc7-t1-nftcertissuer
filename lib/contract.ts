@@ -4,7 +4,7 @@ import { Contract } from "ethers";
 import { getProvider, getSigner } from "../lib/web3";
 import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
-const CONTRACT_ADDRESS = "0x35be216bd69151D05bA265149D9f6cA16191ADEC";
+const CONTRACT_ADDRESS = "0x5707c788F4A16fd33F57C961602Cef5C7Dff33aB";
 const contractABI = NFTCertissuer.abi;
 
 export async function getContract() {

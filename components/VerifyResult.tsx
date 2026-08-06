@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Contract, BrowserProvider } from "ethers";
 import NFTCertissuer from "../contracts/out/NFTCertIssuer.sol/NFTCertIssuer.json";
 
-const CONTRACT_ADDRESS = "0xd2B0f2B6a5266Ff2Ff4dDf26a575Ee5C16694e8D";
+const CONTRACT_ADDRESS = "0x5707c788F4A16fd33F57C961602Cef5C7Dff33aB";
 const abi = NFTCertissuer.abi;
 
 export default function VerifyResult(){
